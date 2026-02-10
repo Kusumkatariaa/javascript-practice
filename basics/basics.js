@@ -72,8 +72,10 @@ let divisionResult = 100 / 0;
 console.log(divisionResult);
 
 // -----------------------------------------------------------------------------------------------------------
+// -----------------------------------------------------------------------------------------------------------
 
 // Variables & Data Types
+
 // 11. Create a variable using let and print it.
 
 let myVariable = "Hello, World!";
@@ -108,3 +110,50 @@ console.log(typeof null);
 
 let stringNumber = "25";
 console.log(typeof (stringNumber));
+
+// -----------------------------------------------------------------------------------------------------------
+
+// 16. Create a boolean and print its type.
+
+let isSunny = false;
+console.log(typeof isSunny);
+
+
+// -----------------------------------------------------------------------------------------------------------
+
+// 17. Create a string, number, and boolean. Print all together.
+
+let myString = "Hello";
+let myNumber = 42;
+let myBoolean = true;
+
+console.log(myString, myNumber, myBoolean);
+
+// -----------------------------------------------------------------------------------------------------------
+
+// 18. Declare a variable without value and print its type.
+
+let variableWithoutValue;
+console.log(typeof variableWithoutValue);
+
+// -----------------------------------------------------------------------------------------------------------
+
+// 19. Create a variable with undefined and print its type.
+
+let undefinedVariable;
+console.log(typeof undefinedVariable);
+
+
+// -----------------------------------------------------------------------------------------------------------
+
+// 20. Create an array using const.
+// - Print it
+// - Try reassigning (observe error)
+// - Push a new value and print updated array.
+const myArray = [1, 2, 3];
+console.log(myArray);
+
+// myArray = [4, 5, 6]; // This will cause an error
+
+myArray.push(4);
+console.log(myArray);
