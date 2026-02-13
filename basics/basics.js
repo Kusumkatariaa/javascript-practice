@@ -146,7 +146,7 @@ console.log(typeof undefinedVariable);
 
 // -----------------------------------------------------------------------------------------------------------
 
-// 20. Create an array using const.
+// 20. Create an array using const.                                       
 // - Print it
 // - Try reassigning (observe error)
 // - Push a new value and print updated array.
