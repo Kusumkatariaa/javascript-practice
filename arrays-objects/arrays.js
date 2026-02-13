@@ -206,7 +206,7 @@ function getKeys(obj) {
 
     return keys;
 }
-let obj1 = { name: "Kusum", age: 22, city: "Delhi" };
+let obj1 = { name: "Kusum", age: 24, city: "Delhi" };
 console.log(getKeys(obj1));
 
 //---------------------------------------------------------------------------------------------------------
@@ -232,7 +232,7 @@ function updateProperty(obj) {
     obj.name = "Updated Name";
     return obj;
 }
-let obj2 = { name: "Kusum", age: 22 };
+let obj2 = { name: "Kusum", age: 24 };
 console.log(updateProperty(obj2));
 
 //---------------------------------------------------------------------------------------------------------
@@ -242,7 +242,7 @@ function keyExists(obj, key) {
     return key in obj;
 }
 
-let obj3 = { name: "Kusum", age: 22 };
+let obj3 = { name: "Kusum", age: 24 };
 console.log(keyExists(obj3, "age"));   // true
 console.log(keyExists(obj3, "city"));  // false
 
@@ -252,7 +252,7 @@ console.log(keyExists(obj3, "city"));  // false
 function objectToArray(obj) {
     return Object.entries(obj);
 }
-let obj4 = { name: "Kusum", age: 22 };
+let obj4 = { name: "Kusum", age: 24 };
 console.log(objectToArray(obj4));
 
 //---------------------------------------------------------------------------------------------------------
