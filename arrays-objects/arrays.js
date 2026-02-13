@@ -145,6 +145,7 @@ function mergeAndRemoveDuplicates(arr1, arr2) {
 
     return unique;
 }
+console.log(mergeAndRemoveDuplicates([1, 2, 3], [2, 3, 4]));
 
 //---------------------------------------------------------------------------------------------------------
 
@@ -159,6 +160,8 @@ function valueExists(arr, value) {
     return false;
 }
 
+console.log(valueExists([10, 20, 30], 20));
+console.log(valueExists([10, 20, 30], 50));
 
 //---------------------------------------------------------------------------------------------------------
 
@@ -178,6 +181,9 @@ function filterA(arr) {
         return item.startsWith("A");
     });
 }
+
+console.log(filterA(["Apple", "Banana", "Avocado", "Mango"]));
+
 //---------------------------------------------------------------------------------------------------------
 
 // 15. Write a function that uses `find()` to return the first number greater than 100.
@@ -186,6 +192,7 @@ function findGreater(arr) {
         return num > 100;
     });
 }
+console.log(findGreater([50, 120, 80, 200]));
 
 //---------------------------------------------------------------------------------------------------------
 
@@ -199,6 +206,9 @@ function getKeys(obj) {
 
     return keys;
 }
+let obj1 = { name: "Kusum", age: 22, city: "Delhi" };
+console.log(getKeys(obj1));
+
 //---------------------------------------------------------------------------------------------------------
 
 // 17. Write a function that adds a new property to an object immutably.
@@ -222,16 +232,27 @@ function updateProperty(obj) {
     obj.name = "Updated Name";
     return obj;
 }
+let obj2 = { name: "Kusum", age: 22 };
+console.log(updateProperty(obj2));
+
 //---------------------------------------------------------------------------------------------------------
 
 // 19. Write a function that checks whether a specific key exists inside an object.
 function keyExists(obj, key) {
     return key in obj;
 }
+
+let obj3 = { name: "Kusum", age: 22 };
+console.log(keyExists(obj3, "age"));   // true
+console.log(keyExists(obj3, "city"));  // false
+
 //---------------------------------------------------------------------------------------------------------
 
 // 20. Write a function that converts an object into an array of key-value pairs.
 function objectToArray(obj) {
     return Object.entries(obj);
 }
+let obj4 = { name: "Kusum", age: 22 };
+console.log(objectToArray(obj4));
+
 //---------------------------------------------------------------------------------------------------------
