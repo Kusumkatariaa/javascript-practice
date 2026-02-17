@@ -226,7 +226,7 @@ function sumOfAllNumbers(arr) {
     for (let i = 0; i < arr.length; i++) {
         sum = sum + i;
     }
-    return sum;
+    return sum;      
 }
 
 console.log(sumOfAllNumbers([1, 8, 3, 4, 5]));
