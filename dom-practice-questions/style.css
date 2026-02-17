@@ -1,3 +1,37 @@
+body {
+    background-color: #d5d1ff91;
+    padding: 80px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+button {
+    background: #6633995c;
+    padding: 10px 22px;
+    border-radius: 6px;
+    border: 2px solid #fff;
+    color: #fff;
+}
+
+.task {
+    padding: 10px;
+    border: 1px solid #000;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    background: #ba80804a;
+    border-radius: 5px;
+
+}
+
 .box {
     height: 200px;
     width: 200px;
