@@ -66,7 +66,16 @@ btn.addEventListener("click", function () {
 
 // The box should not be deleted, only hidden.
 
+let textBox = document.querySelector(".box_contains_text");
+let textBtn = document.querySelector(".click_me");
 
+textBtn.addEventListener('click', function () {
+    if (textBox.style.display == 'none') {
+        textBox.style.display = 'flex';
+    } else {
+        textBox.style.display = 'none';
+    }
+});
 
 
 // ---------------------------------------------------------------------------------------------------------------
@@ -174,6 +183,12 @@ chnageModeBtn.addEventListener('click', function () {
 // - The same text should appear inside the paragraph immediately
 
 
+let userInput = document.querySelector(".user-input");
+let outputText = document.querySelector(".output-text");
+
+userInput.addEventListener("input", function () {
+    outputText.textContent = userInput.value;
+});
 
 
 // ------------------------------------------------------------------------------------------------------------
