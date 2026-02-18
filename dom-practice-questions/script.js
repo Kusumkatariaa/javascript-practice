@@ -345,32 +345,26 @@ let cardCount = 0;
 
 generateBtn.addEventListener("click", function () {
 
-    // Create card element
     let card = document.createElement("div");
     card.classList.add("card");
 
-    // Generate random RGB color
     let r = Math.floor(Math.random() * 256);
     let g = Math.floor(Math.random() * 256);
     let b = Math.floor(Math.random() * 256);
 
     card.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
 
-    // Generate random width & height
-    let randomWidth = Math.floor(Math.random() * 150) + 100;  // 100–250px
+    let randomWidth = Math.floor(Math.random() * 150) + 100;
     let randomHeight = Math.floor(Math.random() * 150) + 100;
 
     card.style.width = randomWidth + "px";
     card.style.height = randomHeight + "px";
 
-    // Assign unique data-id
     cardCount++;
     card.setAttribute("data-id", cardCount);
 
-    // Optional: show id inside card
     card.textContent = `ID: ${cardCount}`;
 
-    // Append card to container
     container.appendChild(card);
 });
 
