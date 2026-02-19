@@ -29,6 +29,8 @@ button {
     margin-top: 20px;
     background: #ba80804a;
     border-radius: 5px;
+    font-family: sans-serif;
+    font-weight: 600;
 
 }
 
@@ -84,6 +86,24 @@ button {
     object-fit: cover;
 }
 
+.winner-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.ipl-winner {
+    font-family: sans-serif;
+    font-size: 20px;
+}
+
+.team_name {
+    color: green;
+    font-weight: 700;
+}
 
 .game-container img {
     height: 109px;
@@ -130,4 +150,99 @@ button {
 
 .card:hover {
     transform: scale(1.05);
+}
+
+
+button.check-result {
+    margin-top: 20px;
+}
+
+input.num-input {
+    width: 157px;
+}
+
+
+.img-box img {
+    height: 300px;
+    width: 300px;
+    object-fit: cover;
+}
+
+.fill-bar {
+    height: 100%;
+    width: 0%;
+    background: green;
+    transition: width 0.4s ease;
+}
+
+.fill-bar {
+    height: 4px;
+    width: 0%;
+    background: rgb(186 208 246 / 90%);
+    transition: width 0.4s ease;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 99;
+    border-radius: 20px;
+}
+
+.track-bar {
+    height: 8px;
+    background: rgb(0 65 182);
+    margin-top: 30px;
+    position: relative;
+    width: 820px;
+    padding: 3px;
+    border-radius: 20px;
+}
+
+.random-box {
+    height: 200px;
+    width: 200px;
+    background: rebeccapurple;
+}
+
+.box-container {
+    display: flex;
+    gap: 20px;
+}
+
+
+.random-box {
+    height: 200px;
+    width: 200px;
+    background: rebeccapurple;
+    display: flex;
+    font-size: 26px;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+    color: #fff;
+    font-weight: 600;
+}
+
+
+
+.numbers-container {
+    display: flex;
+    gap: 50px;
+    padding: 20px;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.result-text {
+    font-size: 30px;
+    font-family: sans-serif;
+    font-weight: 600;
+    padding: 20px;
+}
+
+.dom-task {
+    font-size: 60px;
+    font-family: sans-serif;
+    font-weight: 800;
+    color: #8b718a;
+    padding-bottom: 16px;
 }

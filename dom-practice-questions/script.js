@@ -343,33 +343,23 @@ let container = document.querySelector(".card-container");
 
 let cardCount = 0;
 
-generateBtn.addEventListener("click", function () {
-
-    let card = document.createElement("div");
-    card.classList.add("card");
-
-    let r = Math.floor(Math.random() * 256);
-    let g = Math.floor(Math.random() * 256);
-    let b = Math.floor(Math.random() * 256);
-
-    card.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
-
-    let randomWidth = Math.floor(Math.random() * 150) + 100;
-    let randomHeight = Math.floor(Math.random() * 150) + 100;
-
-    card.style.width = randomWidth + "px";
-    card.style.height = randomHeight + "px";
-
+generateBtn.addEventListener('click', function () {
     cardCount++;
-    card.setAttribute("data-id", cardCount);
 
-    card.textContent = `ID: ${cardCount}`;
+    let card = document.createElement('div');
+    card.setAttribute('data-id', cardCount);
+    let randomColorR = Math.floor(Math.random() * 256);
+    let randomColorG = Math.floor(Math.random() * 256);
+    let randomColorB = Math.floor(Math.random() * 256);
+    card.style.background = `rgb(${randomColorR}, ${randomColorG}, ${randomColorB})`;
 
+    let randomHeight = Math.floor(Math.random() * 151) + 100;
+    let randomWidth = Math.floor(Math.random() * 151) + 100;
+    card.style.height = `${randomHeight}px`;
+    card.style.width = `${randomWidth}px`;
     container.appendChild(card);
+
 });
-
-
-
 
 
 // ------------------------------------------------------------------------------------------------------------------
@@ -380,12 +370,31 @@ generateBtn.addEventListener("click", function () {
 // If the number matches user input, display "You Won" otherwise "Try
 // Again". Update result dynamically in the DOM.
 
+let inputNum = document.querySelector(".num-input");
+let checkResult = document.querySelector(".check-result")
+let resultArea = document.querySelector(".result-display-area")
 
+checkResult.addEventListener('click', function () {
 
+    let userNumber = Number(inputNum.value);
 
+    // Validation
+    if (userNumber < 1 || userNumber > 50) {
+        resultArea.textContent = "Please enter a valid number (1-50)";
+        resultArea.style.color = "red";
+        return;
+    }
 
+    let randomNumber = Math.ceil(Math.random() * 50);
 
-
+    if (userNumber === randomNumber) {
+        resultArea.textContent = `You Won! Winning number was ${randomNumber}`;
+        resultArea.style.color = "green";
+    } else {
+        resultArea.textContent = `Try Again! Winning number was ${randomNumber}`;
+        resultArea.style.color = "red";
+    }
+});
 
 
 
@@ -399,12 +408,23 @@ generateBtn.addEventListener("click", function () {
 // console.
 
 
+let images = ["https://i.pinimg.com/736x/38/33/90/3833900cee9e69c78a98e5d9e0ff0988.jpg",
+    "https://i.pinimg.com/736x/a5/ad/20/a5ad200ca202b684bfdbe7a65294743f.jpg",
+    "https://i.pinimg.com/736x/dd/88/75/dd8875593d43d76167365052e6dfd879.jpg",
+    "https://i.pinimg.com/1200x/0e/39/1f/0e391f1b15dfd12d94ba08a0dbfa400b.jpg",
+    "https://i.pinimg.com/736x/1a/3b/ac/1a3bac79d633d391c50d085d4b6edf2d.jpg"]
 
+let showImageBtn = document.querySelector(".show-img");
+let imageContainer = document.querySelector(".img-box")
 
-
-
-
-
+showImageBtn.addEventListener('click', function () {
+    imageContainer.replaceChildren();
+    let randomImg = Math.floor(Math.random() * images.length);
+    let img = document.createElement("img");
+    img.setAttribute("src", images[randomImg]);
+    console.log(img.getAttribute("src"));
+    imageContainer.append(img);
+});
 
 
 
@@ -417,9 +437,29 @@ generateBtn.addEventListener("click", function () {
 // Stop progress at 100%.
 
 
+let progressContainer = document.querySelector(".progress-container");
+let progressBtn = document.querySelector(".increase-btn");
 
+let track = document.createElement('div');
+track.setAttribute("class", "track-bar");
+let fill = document.createElement('div');
+fill.setAttribute("class", "fill-bar");
 
+progressContainer.appendChild(track);
+track.appendChild(fill);
 
+let progress = 0;
+progressBtn.addEventListener('click', function () {
+    if (progress === 100) return;
+    let randomProgressVal = Math.floor(Math.random() * 21) + 10;
+    progress = progress + randomProgressVal;
+    if (progress > 100) {
+        progress = 100;
+    }
+    console.log(progress);
+    fill.style.width = progress + "%";
+
+});
 
 
 
@@ -436,9 +476,22 @@ generateBtn.addEventListener("click", function () {
 // `getAttribute()` to identify which box was clicked.
 
 
+let boxContainer = document.querySelector(".box-container");
 
-
-
+for (let i = 1; i <= 5; i++) {
+    let randomBox = document.createElement('div');
+    randomBox.setAttribute('class', 'random-box');
+    randomBox.setAttribute('data-id', i);
+    randomBox.textContent = `Box ${i}`;
+    boxContainer.appendChild(randomBox);
+    randomBox.addEventListener('click', function () {
+        let boxId = randomBox.getAttribute('data-id');
+        console.log(boxId);
+        // randomBox.remove();
+        randomBox.style.display = "none";
+        console.log(randomBox)
+    });
+}
 
 
 
@@ -454,6 +507,29 @@ generateBtn.addEventListener("click", function () {
 
 
 
+let numBox = document.querySelectorAll(".number-box");
+let playBtn = document.querySelector(".play-btn");
+let resultText = document.querySelector(".result-text");
+
+
+playBtn.addEventListener('click', function () {
+    let randomNumber1 = Math.floor(Math.random() * 9) + 1;
+    let randomNumber2 = Math.floor(Math.random() * 9) + 1;
+    let randomNumber3 = Math.floor(Math.random() * 9) + 1;
+    console.log(randomNumber1, randomNumber2, randomNumber3);
+
+    numBox[0].textContent = randomNumber1;
+    numBox[1].textContent = randomNumber2;
+    numBox[2].textContent = randomNumber3;
+
+    if (randomNumber1 == randomNumber2 && randomNumber2 == randomNumber3) {
+        resultText.textContent = 'Jackpot';
+        resultText.style.color = "green";
+    } else {
+        resultText.textContent = 'Better Luck Next Time';
+        resultText.style.color = "red";
+    }
+});
 
 
 
